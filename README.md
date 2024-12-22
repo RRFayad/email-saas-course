@@ -101,3 +101,6 @@
 
 - t3 stack
   - npm create t3-app@latest
+- Shadcn
+- Clerk
+  - Following Clerk Steps in their [docs](https://dashboard.clerk.com/apps/app_2qXNTlfwEgGSmTOPKfFYndtpySi/instances/ins_2qXNTvhfvl6DgfbxQ8lX5uIUE6L)

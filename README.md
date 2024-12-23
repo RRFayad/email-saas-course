@@ -97,10 +97,29 @@
 
 ## Project
 
-#### Setup
+#### Initial Setup
 
 - t3 stack
+
   - npm create t3-app@latest
+
 - Shadcn
-- Clerk
-  - Following Clerk Steps in their [docs](https://dashboard.clerk.com/apps/app_2qXNTlfwEgGSmTOPKfFYndtpySi/instances/ins_2qXNTvhfvl6DgfbxQ8lX5uIUE6L)
+
+### Auth
+
+#### Clerk
+
+- Following Clerk Steps in their [docs](https://dashboard.clerk.com/apps/app_2qXNTlfwEgGSmTOPKfFYndtpySi/instances/ins_2qXNTvhfvl6DgfbxQ8lX5uIUE6L);
+
+#### Database (neon)
+
+- Created a database in [neon](https://console.neon.tech/app/projects) (and updated env variable)
+
+- Prisma
+
+  - Create the model
+  - npx prisma db push
+
+- Set webhook with clerk
+  - As Clerk has its own database, we want a webhook to make Clerk ping when there's a new user
+  - So it will send the data to our api

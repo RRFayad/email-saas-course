@@ -22,12 +22,14 @@ export const POST = async (req: Request) => {
     await db.user.create({
       data: { ...toBeCreatedUserData },
     });
+    return new Response("User created successfully", { status: 201 });
   } catch (error) {
-    console.log(
-      "Could not create user.",
-      `Error: ${error}, User Data: ${toBeCreatedUserData}`,
+    return new Response(
+      JSON.stringify({
+        error: "Failed to create user",
+        message: error instanceof Error ? error.message : "Unknown error",
+      }),
+      { status: 500 },
     );
   }
-
-  return new Response("Webhook received", { status: 200 });
 };

@@ -107,6 +107,9 @@
 
 ### Auth
 
+- Remember we have a middleware which is guarding all routes (and we have to set explicitly the public routes)
+  - So our webhook has to be a public endpoint
+
 #### Clerk
 
 - Following Clerk Steps in their [docs](https://dashboard.clerk.com/apps/app_2qXNTlfwEgGSmTOPKfFYndtpySi/instances/ins_2qXNTvhfvl6DgfbxQ8lX5uIUE6L);
@@ -129,3 +132,4 @@
   - npx untun@latest tunnel http://localhost:3000
   - Use the tunnel as url to the webhook
 - Create in our api a route for the clerk webhook
+- After testing, we already deployed (to get the real url)

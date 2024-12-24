@@ -120,6 +120,12 @@
   - Create the model
   - npx prisma db push
 
-- Set webhook with clerk
-  - As Clerk has its own database, we want a webhook to make Clerk ping when there's a new user
-  - So it will send the data to our api
+#### Set webhook with clerk
+
+- As Clerk has its own database, we want a webhook to make Clerk ping when there's a new user
+- So it will send the data to our api
+- Create the WebHook in Clerk config
+- Create a Tunnel
+  - npx untun@latest tunnel http://localhost:3000
+  - Use the tunnel as url to the webhook
+- Create in our api a route for the clerk webhook

@@ -12,11 +12,13 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const fontClass = GeistSans?.variable || "";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${fontClass}`}>
       <body>
         <ClerkProvider>
           <TRPCReactProvider>{children}</TRPCReactProvider>

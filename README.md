@@ -133,3 +133,20 @@
   - Use the tunnel as url to the webhook
 - Create in our api a route for the clerk webhook
 - After testing, we already deployed (to get the real url)
+
+  - To avoid type errors, we added this in next config:
+
+    ```javascript
+    const config = {
+      typescript: {
+        ignoreBuildErrors: true,
+      },
+      eslint: {
+        ignoreDuringBuilds: true,
+      },
+    };
+    ```
+
+### Setup Aurinko and Sync Emails
+
+- Create Aurinko Account and get keys

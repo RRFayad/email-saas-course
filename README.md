@@ -150,3 +150,10 @@
 ### Setup Aurinko and Sync Emails
 
 - Create Aurinko Account and get keys
+
+- Steps:
+
+1. Grant access to Aurinko
+2. Get a token back
+3. Save the token in the db
+4. Use the token to sync the inbox

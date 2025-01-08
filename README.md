@@ -157,3 +157,10 @@
 2. Get a token back
 3. Save the token in the db
 4. Use the token to sync the inbox
+
+## Random Notes and Observations during the project:
+
+- `window.location.href = authUrl;`
+  - window.location = Current URL
+  - href contains the full URL (https//: etc)
+  - So, when I asign a new it navigates the browser

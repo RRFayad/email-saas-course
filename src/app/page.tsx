@@ -1,7 +1,7 @@
-import { Button } from "~/components/ui/button";
+import LinkAccountButton from "~/components/link-account-buttons";
 
 function Home() {
-  return <Button className="">Hello World!</Button>;
+  return <LinkAccountButton />;
 }
 
 export default Home;

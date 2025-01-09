@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { exchangeCodeForAccessToken, getAccountDetails } from "~/lib/aurinko";
+import { db } from "~/server/db";
 
 export const GET = async (req: NextRequest) => {
   const { userId } = await auth();
@@ -33,7 +34,22 @@ export const GET = async (req: NextRequest) => {
   }
 
   const accountDetails = await getAccountDetails(token.accessToken);
-  console.log(accountDetails);
 
-  return NextResponse.json({ message: "Hello World" });
+  await db.account.upsert({
+    where: {
+      id: token.accountId.toString(),
+    },
+    update: {
+      accessToken: token.accessToken,
+    },
+    create: {
+      id: token.accountId.toString(),
+      userId: userId,
+      emailAddress: accountDetails?.email,
+      name: accountDetails?.name,
+      accessToken: token.accessToken,
+    },
+  });
+
+  return NextResponse.redirect(new URL("/mail", req.url));
 };

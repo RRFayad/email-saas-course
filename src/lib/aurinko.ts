@@ -58,5 +58,12 @@ export const getAccountDetails = async (accessToken: string) => {
       email: string;
       name: string;
     };
-  } catch (error) {}
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error(error.response?.data);
+    } else {
+      console.error("Unexpected error fetchint account details:", error);
+    }
+    throw error;
+  }
 };
